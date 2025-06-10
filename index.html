@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Molly Copeland Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- sticky nav bar thing that stays at the top -->
+  <nav class="sticky-nav">
+    <div class="nav-left">Molly Copeland</div>
+    <div class="nav-right">
+      <a href="#" class="active">Summary</a>
+      <a href="#photos">Photos</a>
+      <a href="#videos">Videos</a>
+      <a href="#accomplishments">Accomplishments</a>
+      <a href="#resume">Resume</a>
+    </div>
+  </nav>
+
+  <!-- big photo header with my name and riding stuff -->
+  <header class="hero">
+    <div class="overlay">
+      <h1>Molly Copeland</h1>
+      <p>Equestrian: Hunters, Jumpers, Equitation</p>
+    </div>
+  </header>
+
+  <!-- summary section (just a quick paragraph thing) -->
+  <section class="summary aligned-section">
+    <h2>Summary</h2>
+    <p>
+      I'm a competitive equestrian, specializing in hunters, jumpers, and equitation,
+      with >20 hours of practice time per week, 6 days a week since early grade school,
+      and competing in +20 United States Equestrian Federation (USEF) competitions annually.
+      The following few accomplishments showcase my personal highlights from a competitive
+      year in 2024–2025 across premier national and regional events. Competing in the 15–17
+      age group and 3'6–3'9" divisions, these results reflect performance in hunter, jumper,
+      and equitation.
+    </p>
+  </section>
+
+  <!-- button to view full resume (link goes to gdoc) -->
+  <section class="resume-button aligned-section">
+    <a href="https://docs.google.com/document/d/1EBduI0rgDAtJ4ZHcoEtNcoKisql_7qSEBeHEr5LER6Y/edit?usp=sharing" target="_blank">Full Resume</a>
+  </section>
+
+  <!-- layout with recent wins + volunteering/clinic stuff -->
+  <section class="info-layout">
+    <div class="recent-box">
+      <h3>Recent</h3>
+      <p><strong>Champion</strong><br>Adequan/USEF 3'6" Small Junior Hunters 15 & Under</p>
+      <p><strong>Ranked Top 10 in the Country</strong><br>15 & Under 3'6" Small Junior Hunter</p>
+      <p><strong>3rd Place Overall</strong><br>EMO USHJA 3’3 Jumping Seat Medal Final</p>
+      <p><strong>1st Place</strong><br>USEF Show Jumping Talent Search | Thunderbird</p>
+      <p><strong>8th Place Overall</strong><br>USEF Gladstone Cup Equitation Classic</p>
+      <p><strong>WSHJA 2024 Awards (Zone 9)</strong><br>
+        1st Place Junior Hunter Small - 15 & Under, 3’6"<br>
+        1st Place Junior Hunter Large - 15 & Under, 3’6"<br>
+        1st Place Equitation Medals 3'3"<br>
+        3rd Place Elite Equation 3’6 - 3’9”</p>
+    </div>
+
+    <!-- right side stack w/ volunteering + clinics -->
+    <div class="side-stack">
+      <div class="info-box small-box">
+        <h3>Volunteering</h3>
+        <p><strong>Little Bit Therapeutic Riding Center</strong><br>
+        Supported individuals with disabilities through equine-assisted therapy: horse handling, rider support, and ensuring safety during therapy sessions. Contributions helped participants gain physical, emotional, and cognitive benefits, fostering greater independence and confidence through interaction with horses.</p>
+
+        <p><strong>Washington State Hunter Jumper Association</strong><br>
+        Coming soon</p>
+      </div>
+
+      <div class="info-box small-box">
+        <h3>Clinics</h3>
+        <p><strong>Stanford Red Barn Pre-Collegiate Summer Program</strong><br>
+        Gained experience working with collegiate-level coaches, riding various horses, and improving my skills in flatwork and jumping. The program provided insights into the structure of collegiate competitions, including IHSA and NCEA formats.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- image slider section (3 pics) -->
+  <section class="slider-container aligned-section">
+    <div class="slider-wrapper">
+      <div class="slider" id="slider">
+        <div class="slide"><img src="photo2.jpeg" alt="Ribbon presentation" /></div>
+        <div class="slide"><img src="photo3.jpeg" alt="Jumping action shot" /></div>
+        <div class="slide"><img src="photo4.jpeg" alt="Practice ring" /></div>
+      </div>
+      <button class="arrow left" onclick="prevSlide()">‹</button>
+      <button class="arrow right" onclick="nextSlide()">›</button>
+    </div>
+  </section>
+
+  <!-- lil slider script (leftright arrows + auto scroll) -->
+  <script>
+    const slider = document.getElementById('slider');
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+
+    function updateSlider() {
+      slider.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+      index = (index + 1) % slides.length;
+      updateSlider();
+    }
+    function prevSlide() {
+      index = (index - 1 + slides.length) % slides.length;
+      updateSlider();
+    }
+    let interval = setInterval(nextSlide, 4000);
+    const wrapper = document.querySelector('.slider-wrapper');
+    wrapper.addEventListener('mouseenter', () => clearInterval(interval));
+    wrapper.addEventListener('mouseleave', () => interval = setInterval(nextSlide, 4000));
+  </script>
+
+  <!-- footer copyrihtt -->
+  <footer>
+    <p>© 2025 Molly Copeland</p>
+  </footer>
+
+</body>
+</html>

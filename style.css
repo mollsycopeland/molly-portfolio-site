@@ -1,0 +1,223 @@
+/* reset stuff so nothing goes weird */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* base body stuff */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1f1f1f;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* sticky nav bar thing */
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  border-radius: 0;
+}
+
+/* nav text stuff */
+.nav-left {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: black;
+}
+.nav-right a {
+  color: black;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+.nav-right a:hover,
+.nav-right a.active {
+  background-color: black;
+  color: white;
+}
+
+/* big photo with text at bottom (kinda cool parallax thing) */
+.hero {
+  background: url("photo1.jpeg") no-repeat center center/cover;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 3rem;
+}
+.overlay {
+  background: rgba(255, 255, 255, 0.85);
+  color: black;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+}
+.overlay h1 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+.overlay p {
+  font-size: 1.1rem;
+}
+
+/* summary section (just a quick description thing) */
+.summary {
+  padding: 1rem;
+  max-width: 1000px;
+  margin: 1rem auto 0 auto;
+}
+.summary h2 {
+  font-size: 2.3rem;
+}
+.summary p {
+  font-size: 1.2rem;
+}
+
+/* button thing to go to resume */
+.resume-button {
+  max-width: 1000px;
+  margin: 1rem auto 2rem auto;
+}
+.resume-button a {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.resume-button a:hover {
+  background-color: #f2f2f2;
+}
+
+/* info section with boxes side by side */
+.info-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+.recent-box {
+  flex: 1.5;
+  background-color: #e3dbc1;
+  color: #111;
+  padding: 1.75rem 1.25rem 1.75rem 1.75rem;
+  border-radius: 10px;
+}
+.side-stack {
+  flex: 1.25;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.info-box {
+  background-color: #e3dbc1;
+  color: #111;
+  padding: 1.75rem 1.75rem 1.75rem 1.25rem;
+  border-radius: 10px;
+}
+.recent-box h3,
+.info-box h3 {
+  font-size: 1.7rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid white;
+  padding-bottom: 0.25rem;
+  width: 90%;
+}
+.recent-box p,
+.info-box p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* image slider thing */
+.slider-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 3rem auto;
+  position: relative;
+  overflow: hidden;
+}
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+.slider {
+  display: flex;
+  width: 300%; /* there's 3 slides so 300% */
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
+}
+.slide {
+  flex: 0 0 100%;
+  height: 100%;
+}
+.slide img {
+  width: 30%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  padding-left: 150px; /* just to center-ish it lol */
+}
+
+/* slider arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0 12px;
+  z-index: 10;
+  border-radius: 6px;
+  color: black;
+}
+.arrow.left {
+  left: 15px;
+}
+.arrow.right {
+  right: 15px;
+}
+.arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* footer thing, v simple */
+footer {
+  background-color: #004d40;
+  color: white;
+  text-align: center;
+  padding: 0.4rem;
+  font-size: 0.85rem;
+  margin-top: 3rem;
+}
+
+/* to align all sections the same width */
+.aligned-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
